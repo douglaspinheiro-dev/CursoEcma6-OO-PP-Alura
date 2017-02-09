@@ -24,7 +24,7 @@ gulp.task("server",function(){
 	browserSync.init({
 	    proxy: "127.0.0.1/CursoEcma6-OO-PP-Alura/client/"
 	});
-	gulp.watch("client/js/*.js").on("change",browserSync.reload);
+	gulp.watch("client/js/*/**").on("change",browserSync.reload);
 	gulp.watch("client/css/*.css").on("change",browserSync.reload);
 	gulp.watch("client/*.html").on("change",browserSync.reload);
 });
