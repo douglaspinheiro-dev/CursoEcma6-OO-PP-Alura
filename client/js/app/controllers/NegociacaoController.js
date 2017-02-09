@@ -1,7 +1,7 @@
 class NegociacaoController {
 
 	constructor(){
-		let $ = document.querySelector.bind(document);
+		//let Z = document.querySelector.bind(document);
 		this._inputData = $('#data');
 		this._inputQuantidade = $('#quantidade');
 		this._inputValor = $('#valor');
@@ -31,21 +31,20 @@ class NegociacaoController {
 	}
 
 	_limpaFormulario(){
-		this._inputData.value = '';
-		this._inputQuantidade.value = 1;
-		this._inputValor.value = 0.0;
+		this._inputData.closest('form').each (function(){this.reset()});
 		this._inputData.focus();
+		/*
+		this._inputData.val() = '';
+		this._inputQuantidade.val() = 1;
+		this._inputValor.val() = 0.0;
+		this._inputData.focus();*/
 	}
 
 	_criaNegociacao(){
 		return new Negociacao(
-			DateHelper.textoParaData(this._inputData.value),
-			this._inputQuantidade.value,
-			this._inputValor.value
+			DateHelper.textoParaData(this._inputData.val()),
+			this._inputQuantidade.val(),
+			this._inputValor.val()
 		);
 	}
-
-	
-
-		
 }

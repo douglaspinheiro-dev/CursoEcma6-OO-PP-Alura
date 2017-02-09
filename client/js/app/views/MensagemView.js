@@ -1,10 +1,13 @@
 class MensagemView extends View {
 	constructor(elemento){
 		super(elemento);
+		this._id = '#mensagemView';
+		this._url = 'js/app/views/templates/alert_MensagemView.html';
+		
 	}
 
-	template(model){
-		return model.texto ? `<p class="alert alert-info">${model.texto}</p>` : '<p></p>';
+	update(texto){
+		this.renderiza(texto);
 	}
 
 }

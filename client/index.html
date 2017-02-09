@@ -56,6 +56,11 @@
     
     <div id="negociacoesView"></div>
     <!-- Models = regras de negócio, onde ficaram as classes. -->
+    
+    <script src="js/jquery-311.min.js"></script>
+    <script src="js/jsrender.min.js"></script>
+
+
     <script src="js/app/views/View.js"></script>
     <script src="js/app/models/Negociacao.js"></script>
     <script src="js/app/models/ListaNegociacoes.js"></script>
@@ -68,7 +73,9 @@
     <script src="js/app/helpers/DateHelper.js"></script>
 
     <script>
+        $.views.settings.allowCode(true);
         let negociacaoController = new NegociacaoController();
+
     </script>
 
  

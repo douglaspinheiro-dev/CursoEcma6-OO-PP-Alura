@@ -1,0 +1,35 @@
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>DATA</th>
+            <th>QUANTIDADE</th>
+            <th>VALOR</th>
+            <th>VOLUME</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        
+        {{for negociacoes}}
+        	<tr>
+    			<td>{{: ~dataParaTexto(data)}}</td>
+    			<td>{{: quantidade}}</td>
+    			<td>{{: valor}}</td>
+    			<td>{{: volume}}</td>
+    		</tr>
+            
+        {{/for}}
+	
+    </tbody>
+    
+    <tfoot>
+    	<td colspan="3"></td>
+        {{* window.total = 0;}}
+          
+        {{for negociacoes}}
+            {{* total += data.volume}}
+        {{/for}}
+        
+        <td>{{*: total}}</td>
+    </tfoot>
+</table>
